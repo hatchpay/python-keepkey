@@ -1,6 +1,7 @@
 from . import messages_pb2 as proto
 from . import messages_eos_pb2 as eos_proto
 from . import messages_nano_pb2 as nano_proto
+from . import messages_ripple_pb2 as ripple_proto
 
 map_type_to_class = {}
 map_class_to_type = {}
@@ -12,6 +13,8 @@ def build_map():
             msg_class = getattr(eos_proto, msg_name)
         elif msg_type.startswith('MessageType_Nano'):
             msg_class = getattr(nano_proto, msg_name)
+        elif msg_type.startswith('MessageType_Ripple'):
+            msg_class = getattr(ripple_proto, msg_name)
         else:
             msg_class = getattr(proto, msg_name)
 
