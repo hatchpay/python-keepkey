@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='messages-ripple.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\x15messages-ripple.proto\";\n\x10RippleGetAddress\x12\x11\n\taddress_n\x18\x01 \x03(\r\x12\x14\n\x0cshow_display\x18\x02 \x01(\x08\" \n\rRippleAddress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"\xea\x01\n\x0cRippleSignTx\x12\x11\n\taddress_n\x18\x01 \x03(\r\x12\x0b\n\x03\x66\x65\x65\x18\x02 \x01(\x04\x12\r\n\x05\x66lags\x18\x03 \x01(\r\x12\x10\n\x08sequence\x18\x04 \x01(\r\x12\x1c\n\x14last_ledger_sequence\x18\x05 \x01(\r\x12,\n\x07payment\x18\x06 \x01(\x0b\x32\x1b.RippleSignTx.RipplePayment\x1aM\n\rRipplePayment\x12\x0e\n\x06\x61mount\x18\x01 \x01(\x04\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12\x17\n\x0f\x64\x65stination_tag\x18\x03 \x01(\r\":\n\x0eRippleSignedTx\x12\x11\n\tsignature\x18\x01 \x01(\x0c\x12\x15\n\rserialized_tx\x18\x02 \x01(\x0c\x42;\n#com.shapeshift.keepkey.lib.protobufB\x14KeepKeyMessageRipple')
+  serialized_pb=_b('\n\x15messages-ripple.proto\";\n\x10RippleGetAddress\x12\x11\n\taddress_n\x18\x01 \x03(\r\x12\x14\n\x0cshow_display\x18\x02 \x01(\x08\" \n\rRippleAddress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"\x8e\x01\n\x0cRippleSignTx\x12\x11\n\taddress_n\x18\x01 \x03(\r\x12\x0b\n\x03\x66\x65\x65\x18\x02 \x01(\x04\x12\r\n\x05\x66lags\x18\x03 \x01(\r\x12\x10\n\x08sequence\x18\x04 \x01(\r\x12\x1c\n\x14last_ledger_sequence\x18\x05 \x01(\r\x12\x1f\n\x07payment\x18\x06 \x01(\x0b\x32\x0e.RipplePayment\"M\n\rRipplePayment\x12\x0e\n\x06\x61mount\x18\x01 \x01(\x04\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12\x17\n\x0f\x64\x65stination_tag\x18\x03 \x01(\r\":\n\x0eRippleSignedTx\x12\x11\n\tsignature\x18\x01 \x01(\x0c\x12\x15\n\rserialized_tx\x18\x02 \x01(\x0c\x42;\n#com.shapeshift.keepkey.lib.protobufB\x14KeepKeyMessageRipple')
 )
 
 
@@ -94,50 +94,6 @@ _RIPPLEADDRESS = _descriptor.Descriptor(
 )
 
 
-_RIPPLESIGNTX_RIPPLEPAYMENT = _descriptor.Descriptor(
-  name='RipplePayment',
-  full_name='RippleSignTx.RipplePayment',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='amount', full_name='RippleSignTx.RipplePayment.amount', index=0,
-      number=1, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='destination', full_name='RippleSignTx.RipplePayment.destination', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='destination_tag', full_name='RippleSignTx.RipplePayment.destination_tag', index=2,
-      number=3, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=278,
-  serialized_end=355,
-)
-
 _RIPPLESIGNTX = _descriptor.Descriptor(
   name='RippleSignTx',
   full_name='RippleSignTx',
@@ -190,7 +146,7 @@ _RIPPLESIGNTX = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_RIPPLESIGNTX_RIPPLEPAYMENT, ],
+  nested_types=[],
   enum_types=[
   ],
   options=None,
@@ -200,7 +156,52 @@ _RIPPLESIGNTX = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=121,
-  serialized_end=355,
+  serialized_end=263,
+)
+
+
+_RIPPLEPAYMENT = _descriptor.Descriptor(
+  name='RipplePayment',
+  full_name='RipplePayment',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='amount', full_name='RipplePayment.amount', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='destination', full_name='RipplePayment.destination', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='destination_tag', full_name='RipplePayment.destination_tag', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=265,
+  serialized_end=342,
 )
 
 
@@ -237,15 +238,15 @@ _RIPPLESIGNEDTX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=357,
-  serialized_end=415,
+  serialized_start=344,
+  serialized_end=402,
 )
 
-_RIPPLESIGNTX_RIPPLEPAYMENT.containing_type = _RIPPLESIGNTX
-_RIPPLESIGNTX.fields_by_name['payment'].message_type = _RIPPLESIGNTX_RIPPLEPAYMENT
+_RIPPLESIGNTX.fields_by_name['payment'].message_type = _RIPPLEPAYMENT
 DESCRIPTOR.message_types_by_name['RippleGetAddress'] = _RIPPLEGETADDRESS
 DESCRIPTOR.message_types_by_name['RippleAddress'] = _RIPPLEADDRESS
 DESCRIPTOR.message_types_by_name['RippleSignTx'] = _RIPPLESIGNTX
+DESCRIPTOR.message_types_by_name['RipplePayment'] = _RIPPLEPAYMENT
 DESCRIPTOR.message_types_by_name['RippleSignedTx'] = _RIPPLESIGNEDTX
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -264,19 +265,18 @@ RippleAddress = _reflection.GeneratedProtocolMessageType('RippleAddress', (_mess
 _sym_db.RegisterMessage(RippleAddress)
 
 RippleSignTx = _reflection.GeneratedProtocolMessageType('RippleSignTx', (_message.Message,), dict(
-
-  RipplePayment = _reflection.GeneratedProtocolMessageType('RipplePayment', (_message.Message,), dict(
-    DESCRIPTOR = _RIPPLESIGNTX_RIPPLEPAYMENT,
-    __module__ = 'messages_ripple_pb2'
-    # @@protoc_insertion_point(class_scope:RippleSignTx.RipplePayment)
-    ))
-  ,
   DESCRIPTOR = _RIPPLESIGNTX,
   __module__ = 'messages_ripple_pb2'
   # @@protoc_insertion_point(class_scope:RippleSignTx)
   ))
 _sym_db.RegisterMessage(RippleSignTx)
-_sym_db.RegisterMessage(RippleSignTx.RipplePayment)
+
+RipplePayment = _reflection.GeneratedProtocolMessageType('RipplePayment', (_message.Message,), dict(
+  DESCRIPTOR = _RIPPLEPAYMENT,
+  __module__ = 'messages_ripple_pb2'
+  # @@protoc_insertion_point(class_scope:RipplePayment)
+  ))
+_sym_db.RegisterMessage(RipplePayment)
 
 RippleSignedTx = _reflection.GeneratedProtocolMessageType('RippleSignedTx', (_message.Message,), dict(
   DESCRIPTOR = _RIPPLESIGNEDTX,
